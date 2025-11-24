@@ -1,0 +1,271 @@
+<!-- html test 3 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>google market view</title>
+  <!-- <h1>change the setting first and see what happens after
+    <br>
+    my own google streetview for seeing stuff it cannot.
+  <br>
+    holes, or bugs, or blind spots in streetview</h1> -->
+</head>
+<body>
+<style>
+*{
+box-sizing: border-box;
+}
+html{
+max-height: 90vh;
+}
+body {
+/* background-color: black; */
+top:0;
+}
+.image-container {
+/* box-shadow: 0px 0px 40px 40px white; */
+display: flex;
+position: relative;
+background-size: cover;
+background-position: center;
+width: 120%;
+height: auto;
+/* top: -10%; */
+margin-top: -6%;
+margin-left: -5%;
+transition: width 1s ease-in-out, margin-top 0.8s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.image-container img {
+display: block;
+width: 100%;
+height: auto;
+/* position: absolute; */
+}
+
+    
+.overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: auto;
+cursor: pointer;
+}
+.overlay.halfscreen{
+width: 70%;
+top:20%;
+left: 50%;
+transform: translatex(-50%);
+}
+/* img.halfscreen img{
+width: 20%; !important
+} */
+.hidden {
+display: none !important;
+}
+
+img {
+-webkit-user-drag: none;
+-webkit-user-select: none;
+-webkit-tap-highlight-color: transparent;
+outline: none;
+}
+.facetime-animation{
+opacity: 80%;
+}
+.audio {
+text-align: center;
+}
+
+/* @media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+} */
+
+
+.title{
+position: fixed;
+display: block;
+top:0;
+padding: 20px;
+border-radius: 20px;
+margin-left: 10px;
+margin-right: 10px;
+margin-bottom: 10px;
+margin-top: 10px;
+font-family: 'Franklin Gothic Medium', 'Arial', Arial, sans-serif;
+background-color: whitesmoke;
+width: 98%;
+z-index: 90;
+/* text-align: center; */
+/* color: gray; */
+}
+a.active{
+color: gray !important;
+}
+a:link,
+a:visited{
+text-decoration: none;
+color: rgb(173, 173, 173);
+}
+a:hover{
+text-decoration: underline;
+}
+  </style>
+  <div class="title">
+    <a href="index.html" class="active">© google market view</a>
+    <a href="html-test-4.html">google clone view</a>
+    <a href="html-test-3.html">google machine view</a>
+    <a href="html-test-for-school-v2.html">google behind view</a>
+</div>
+        <div class = "window">
+            <div class="image-container">
+                <!-- base image -->
+                <img src="street1.jpg" alt="base-image" id="base">
+
+
+    <!-- right images -->
+     <img src="street-right1.jpg" class="overlay hidden right" alt="right-1">
+     <img src="street-right2.jpg" class="overlay hidden right halfscreen" alt="right-1">
+     <img src="street-right3.jpg" class="overlay hidden right halfscreen" alt="right-1">
+     <img src="street-right4.jpg" class="overlay hidden right halfscreen" alt="right-1">
+     <img src="street-right5.jpg" class="overlay hidden right" alt="right-1">
+     <img src="street-right6.jpg" class="overlay hidden right" alt="right-1">
+     <img src="street-right7.jpg" class="overlay hidden right" alt="right-1">
+     <img src="street-right8.jpg" class="overlay hidden right halfscreen" alt="right-1">
+     <img src="street-right7.jpg" class="overlay hidden right" alt="right-1">
+     <img src="street-right9.jpg" class="overlay hidden right halfscreen" alt="right-1">
+     <!-- <video id="video" class="overlay hidden right facetime" autoplay></video> -->
+
+
+    
+
+    
+    <!-- left images -->
+    <img src="street-left1.jpg" class="overlay hidden left" alt="left-1">
+    <img src="street-left2.jpg" class="overlay hidden left" alt="left-1">
+    <img src="street-left3.jpg" class="overlay hidden left" alt="left-1">
+    <img src="street-left4.jpg" class="overlay hidden left halfscreen" alt="left-1">
+    <img src="street-left3.jpg" class="overlay hidden left" alt="left-1">
+    <img src="street-left5.jpg" class="overlay hidden left halfscreen" alt="left-1">
+    <img src="street-left6.jpg" class="overlay hidden left" alt="left-1">
+    <img src="street-left7.jpg" class="overlay hidden left halfscreen" alt="left-1">
+    <img src="street-left8.jpg" class="overlay hidden left halfscreen" alt="left-1">
+    <img src="street-left9.jpg" class="overlay hidden left halfscreen" alt="left-1">
+
+  </div>
+</div>
+    <!-- <div class = "audio">
+        <audio controls autoplay>
+        <source src="paristexas.mp3" type="audio/mpeg"> console.log("Hello world!");
+        </audio>
+    </div> -->
+
+
+
+
+
+  <script>
+    // // Script for one disappearing image
+    // const overlays = document.querySelectorAll('.overlay');
+
+    // // img.addEventListener('click', () => {
+    //   // img.classList.add('hidden');
+
+    // // });
+
+    // overlays.forEach(img => {
+
+    //   img.addEventListener('click', function (e) {
+    //     console.log(e.target); 
+
+    //     // e.target.style.border = "20px solid blue"
+
+    //     // e.target.classList.add ("hidden");
+    //     e.target.style.display = "none";
+    //   });
+    // });
+
+const imageContainer = document.querySelector('.image-container');
+    const leftImages = document.querySelectorAll('.overlay.left');
+    const rightImages = document.querySelectorAll('.overlay.right');
+
+    let leftIndex = 0;
+    let rightIndex = 0;
+
+    function hideAll() {
+      document.querySelectorAll('.overlay').forEach(img => img.classList.add('hidden'));
+      
+    }
+    // function addHidden() {  
+    //   document.querySelectorAll('.facetime').forFacetime(img => img.classList.add('facetime-animation'));
+    // }
+
+    imageContainer.addEventListener('click', (event) => {
+      const rect = imageContainer.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+
+      hideAll();
+
+      if (event.clientX < centerX) {
+        // Left click region
+        leftImages[leftIndex].classList.remove('hidden');
+        leftIndex = (leftIndex + 1) % leftImages.length;
+      } else {
+        // Right click region
+        rightImages[rightIndex].classList.remove('hidden');
+        rightIndex = (rightIndex + 1) % rightImages.length;
+      }
+    });
+
+
+
+// Script for skew tilt
+imageContainer.addEventListener('mousemove', (event) => {
+  const centerX =window.innerWidth  /2;
+
+  if (event.clientX > centerX) {
+    imageContainer.style.transform = "perspective(250px) rotateY(1deg)";
+
+   } else {
+    imageContainer.style.transform = "perspective(250px) rotateY(-1deg)";
+  }
+});
+
+imageContainer.addEventListener('mouseleave', () => {
+  imageContainer.style.transform = "perspective(250px) rotateY(0deg)";
+});
+
+const video = document.getElementById('video');
+video.playbackRate = 0.5;
+
+
+
+
+async function startCamera() {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
+    } catch (err) {
+        console.error("Error accessing the camera", err);
+    }
+}
+startCamera();
+
+video.style.cssText = "-moz-transform: scale(-1, 1); \
+-webkit-transform: scale(-1, 1); -o-transform: scale(-1, 1); \
+transform: scale(-1, 1); filter: FlipH;";
+
+  </script>
+  <!-- what you can't see. focus on what is banal. <br> -->
+  <br>
+  <!-- streetview, not limited to the ground? -->
+   <!-- <br> make it surprize you. What if you could get into a computer. Or bump into someone on the street and get into his point of view. live camera? facetime camera? -->
+</body>
+
+</html>
+
+<!-- let lastLeft = null;
+let lastRight = null; -->

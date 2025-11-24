@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>google behind view</title>
+</head>
+
+<body>
+
+
+  <style>
+    .image-container {
+      display: block;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      width: 32%;
+      height: auto;
+      margin-top: 20%;
+      margin-left: auto;
+      margin-right: auto;
+      user-select: none;
+    }
+
+    .image-container img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none; !important;
+    }
+.bottom-bar{
+position: fixed;
+width: 70%;
+height: auto;
+top: 12%;
+left: 50%;
+transform: translate(-50%);
+}
+.bottom-bar img{
+width: 100%;
+height: auto;
+}
+.title{
+position: fixed;
+display: block;
+top:0;
+padding: 20px;
+border-radius: 20px;
+margin-left: 10px;
+margin-right: 10px;
+margin-bottom: 10px;
+margin-top: 10px;
+font-family: 'Franklin Gothic Medium', 'Arial', Arial, sans-serif;
+background-color: whitesmoke;
+width: 95%;
+z-index: 90;
+/* text-align: center; */
+color: gray;
+}
+  a.active{
+color: gray !important;
+}
+a:link,
+a:visited{
+text-decoration: none;
+color: rgb(173, 173, 173);
+}
+a:hover{
+text-decoration: underline;
+}
+  </style>
+  <div class="title">
+    <a href="html-test-for-school-v2.html"class="active">© google behind view</a>
+    <a href="html-test-3.html" >google machine view</a>
+    <a href="index.html" >google market view</a>
+    <a href="html-test-4.html">google clone view</a>
+    
+</div>
+<div class="bottom-bar">
+  <img src="go-behind.jpg">
+</div>
+  <div class="image-container">
+    <img src="IMG_3984.JPG"                 alt="base-image">
+    <img src="IMG_3983.JPG" class="overlay" alt="overlay-cup-1">
+    <img src="IMG_3982.JPG" class="overlay" alt="overlay-cup-2">
+    <img src="IMG_3981.JPG" class="overlay" alt="overlay-cup-3">
+    <img src="IMG_3980.JPG" class="overlay" alt="overlay-cup-4">
+    <img src="IMG_3979.JPG" class="overlay" alt="overlay-cup-5">
+
+  </div>
+
+
+  <script>
+    const overlays = document.querySelectorAll('.overlay');
+
+    // img.addEventListener('click', () => {
+      // img.classList.add('hidden');
+
+    // });
+
+    overlays.forEach(img => {
+
+      img.addEventListener('click', function (e) {
+        console.log(e.target); 
+
+        // e.target.style.border = "20px solid blue"
+
+        // e.target.classList.add ("hidden");
+        e.target.style.display = "none";
+      });
+    
+      
+
+     
+    });
+  </script>
+</body>
+
+</html>

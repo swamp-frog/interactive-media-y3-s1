@@ -1,0 +1,221 @@
+<!-- html test 3 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>google machine view</title>
+</head>
+
+<body>
+
+
+  <style>
+    .image-container {
+      display: flex;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      width: 40%;
+      height: auto;
+      margin-top: 25vh;
+      margin-left: auto;
+      margin-right: auto;
+      z-index: 10;
+      overflow: hidden;
+      border-radius: 9px;
+      transition: width 1s ease-in-out, margin-top 0.8s ease-in-out, transform 0.6s ease-in-out;
+    }
+
+
+.image-container:hover{
+      width: 50%;
+      height: auto;
+      margin: auto;
+      margin-top:20vh;
+      
+    }
+
+    .image-container img,
+    .image-container video {
+      display: block;
+      width: 102%;
+      height: 102%;
+      /* object-fit: cover; */
+      margin-left: -1%;
+      /* position: absolute; */
+    }
+
+    
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      cursor: pointer;
+      z-index: 5;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    img {
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+.background-image{
+position: fixed;
+display: block;
+width: 100%;
+height: auto;
+top:8%;
+z-index: 1;
+}
+.sheets{
+position: fixed;
+display: block;
+width: 100%;
+height: auto;
+z-index: 2;
+top:0;
+}
+.sheets img{
+width: 100%;
+height: auto;
+}
+.title{
+position: fixed;
+display: block;
+top:0;
+padding: 20px;
+border-radius: 20px;
+margin-left: 10px;
+margin-right: 10px;
+margin-bottom: 10px;
+margin-top: 10px;
+font-family: 'Franklin Gothic Medium', 'Arial', Arial, sans-serif;
+background-color: whitesmoke;
+width: 95%;
+z-index: 90;
+/* text-align: center; */
+color: gray;
+}
+a.active{
+color: gray !important;
+}
+a:link,
+a:visited{
+text-decoration: none;
+color: rgb(173, 173, 173);
+}
+a:hover{
+text-decoration: underline;
+}
+  </style>
+  <div class="title">
+    <a href="html-test-3.html" class="active">© google machine view</a>
+    <a href="index.html" >google market view</a>
+    <a href="html-test-4.html">google clone view</a>
+    <a href="html-test-for-school-v2.html">google behind view</a>
+</div>
+<div class="background-image"><img src="excel.jpg"></div>
+<!-- <div class="sheets"><img src="sheets.jpg"></div> -->
+<div class="image-container">
+    <img src="screenshot-middle.jpg" id="base">
+
+
+    <!-- Left images -->
+    <img src="screenshot-left1.jpg" class="overlay hidden left">
+    <img src="screenshot-left2.jpg" class="overlay hidden left">
+    <img src="screenshot-left3.jpg" class="overlay hidden left">
+    <img src="screenshot-left4.jpg" class="overlay hidden left">
+
+    <!-- Right images -->
+    <img src="screenshot-right1.jpg" class="overlay hidden right">
+    <img src="screenshot-right2.jpg" class="overlay hidden right">
+    <img src="imageright8.JPG" class="overlay hidden right" alt="right-8">
+    <img src="imageright9.JPG" class="overlay hidden right" alt="right-9">
+    <img src="imageright10.JPG" class="overlay hidden right" alt="right-10">
+    <img src="imageright11.JPG" class="overlay hidden right" alt="right-11">
+    <video id="video" class="overlay hidden right facetime" autoplay playsinline></video>
+  </div>
+
+
+
+  <script>
+
+const imageContainer = document.querySelector('.image-container');
+    const leftImages = document.querySelectorAll('.overlay.left');
+    const rightImages = document.querySelectorAll('.overlay.right');
+
+    let leftIndex = 0;
+    let rightIndex = 0;
+
+    function hideAll() {
+      document.querySelectorAll('.overlay').forEach(img => img.classList.add('hidden'));
+    }
+
+    imageContainer.addEventListener('click', (event) => {
+      const rect = imageContainer.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+
+      hideAll();
+
+      if (event.clientX < centerX) {
+        // Left click region
+        leftImages[leftIndex].classList.remove('hidden');
+        leftIndex = (leftIndex + 1) % leftImages.length;
+      } else {
+        // Right click region
+        rightImages[rightIndex].classList.remove('hidden');
+        rightIndex = (rightIndex + 1) % rightImages.length;
+      }
+    });
+
+
+// Script for skew tilt
+
+// var imageContainer = document.querySelector('.image-container');
+
+imageContainer.addEventListener('mousemove', (event) => {
+  const centerX =window.innerWidth  /2;
+
+  if (event.clientX > centerX) {
+    imageContainer.style.transform = "perspective(250px) rotateY(-3deg)";
+
+   } else {
+    imageContainer.style.transform = "perspective(250px) rotateY(3deg)";
+  }
+});
+
+imageContainer.addEventListener('mouseleave', () => {
+  imageContainer.style.transform = "perspective(250px) rotateY(0deg)";
+});
+
+const video = document.getElementById('video');
+async function startCamera() {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
+    } catch (err) {
+        console.error("Error accessing the camera", err);
+    }
+}
+startCamera();
+
+video.style.cssText = "-moz-transform: scale(-1, 1); \
+-webkit-transform: scale(-1, 1); -o-transform: scale(-1, 1); \
+transform: scale(-1, 1); filter: FlipH;";
+
+  </script>
+  <!-- what you can't see. focus on what is banal. <br> -->
+  <br>
+  <!-- streetview, not limited to the ground? -->
+   <!-- <br> make it surprize you. What if you could get into a computer. Or bump into someone on the street and get into his point of view. live camera? facetime camera? -->
+</body>
+
+</html>
