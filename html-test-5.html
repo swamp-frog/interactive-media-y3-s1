@@ -1,0 +1,291 @@
+<!-- html test 3 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>different paths</title>
+  <!-- <h1>change the setting first and see what happens after
+    <br>
+    my own google streetview for seeing stuff it cannot.
+  <br>
+    holes, or bugs, or blind spots in streetview</h1> -->
+</head>
+
+<body>
+
+
+  <style>
+
+   body {
+    /* background-color: black; */
+   }
+    .image-container {
+      /* box-shadow: 0px 0px 40px 40px white; */
+      display: flex;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      width: 30%;
+      height: auto;
+      margin-top: 25vh;
+      margin-left: auto;
+      margin-right: auto;
+      transition: width 1s ease-in-out, margin-top 0.8s ease-in-out, transform 0.6s ease-in-out;
+    }
+
+.image-container-extra {
+      display: flex;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      width: 30%;
+      height: auto;
+      margin-top: 0vh;
+      margin-left: auto;
+      margin-right: auto;
+      transition: width 1s ease-in-out, margin-top 0.8s ease-in-out, transform 0.6s ease-in-out;
+    }
+
+.image-container-extra img {
+  display: block;
+      width: 100%;
+      height: auto;
+}
+
+.image-container:hover{
+      width: 40%;
+      height: auto;
+      margin: auto;
+      margin-top:20vh;
+      
+    }
+
+    .image-container img {
+      display: block;
+      width: 100%;
+      height: auto;
+      /* position: absolute; */
+    }
+
+    
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    img {
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.facetime-animation{
+    opacity: 80%;
+
+}
+
+  .audio {
+    text-align: center;
+  }
+
+/* @media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+} */
+
+
+
+  </style>
+
+
+    <!-- Divs for one layer of disapearing images -->
+
+    <!-- <div class="image-container">
+    <img src="IMG_3977.JPG"                 alt="base-image">
+    <img src="IMG_3975.JPG" class="overlay" alt="overlay-1">
+    <img src="IMG_3973.JPG" class="overlay" alt="overlay-2">
+    <img src="IMG_3971.JPG" class="overlay" alt="overlay-3"> -->
+
+
+  </div>
+<div class = "window">
+<div class="image-container">
+    <img src="basechair.JPG"                 alt="base-image" id="base">
+
+
+    <!-- right images -->
+     <img src="plug1.JPG" class="overlay hidden right" alt="right-1">
+     <img src="plug2.JPG" class="overlay hidden right" alt="right-2">
+     <img src="plug3.JPG" class="overlay hidden right" alt="right-3">
+     <img src="plug4.JPG" class="overlay hidden right" alt="right-4">
+     <img src="plug5.JPG" class="overlay hidden right" alt="right-5">
+     <img src="plug6.JPG" class="overlay hidden right" alt="right-6">
+     <img src="plug7.JPG" class="overlay hidden right" alt="right-7">
+     <img src="plug8.JPG" class="overlay hidden right" alt="right-8">
+
+     <img src="imageright9.JPG" class="overlay hidden right" alt="right-9">
+     <img src="imageright10.JPG" class="overlay hidden right" alt="right-10">
+     <img src="imageright11.JPG" class="overlay hidden right" alt="right-11">
+
+     <img src="plug8.JPG" class="overlay hidden right" alt="right-8">
+
+     <video id="video" class="overlay hidden right facetime" autoplay></video>
+
+
+    
+
+    
+    <!-- left images -->
+    <img src="chair1.JPG" class="overlay hidden left" alt="left-1">
+    <img src="chair2.JPG" class="overlay hidden left" alt="left-2">
+    <img src="chair3.JPG" class="overlay hidden left" alt="left-3">
+    <img src="chair4.JPG" class="overlay hidden left" alt="left-4">
+    <img src="chair5.JPG" class="overlay hidden left" alt="left-5">
+    <img src="chair6.JPG" class="overlay hidden left" alt="left-6">
+    <img src="chair7.JPG" class="overlay hidden left" alt="left-7">
+    <img src="chair8.JPG" class="overlay hidden left" alt="left-8">
+
+    <img src="plug8.JPG" class="overlay hidden left" alt="left-8.5">
+
+    <img src="human1.JPG" class="overlay hidden left" alt="left-9">
+    <img src="human2.JPG" class="overlay hidden left" alt="left-10">
+    <img src="human3.JPG" class="overlay hidden left" alt="left-11">
+
+    <img src="IMG_4309.jpg" class="overlay hidden left" alt="left-12">
+    <img src="IMG_4310.jpg" class="overlay hidden left" alt="left-13">
+    <img src="IMG_4311.jpg" class="overlay hidden left" alt="left-14">
+    <img src="IMG_4312.jpg" class="overlay hidden left" alt="left-15">
+    <img src="IMG_4313.jpg" class="overlay hidden left" alt="left-16">
+    <img src="IMG_4314.jpg" class="overlay hidden left" alt="left-17">
+    <img src="IMG_4316.jpg" class="overlay hidden left" alt="left-18">
+    <img src="IMG_4317.jpg" class="overlay hidden left" alt="left-19">
+    <!-- <img src="human4.JPG" class="overlay hidden left" alt="left-12"> -->
+    <!-- <img src="human5.JPG" class="overlay hidden left" alt="left-13"> -->
+    <!-- <img src="human6.JPG" class="overlay hidden left" alt="left-14"> -->
+    <!-- <img src="human7.JPG" class="overlay hidden left" alt="left-15"> -->
+
+  </div>
+      <div class = "audio">
+        <audio controls autoplay>
+        <source src="paristexas.mp3" type="audio/mpeg"> console.log("Hello world!");
+        </audio>
+</div>
+  <!-- <div class="image-container-extra">
+    <img src="centercomputer.JPG"                 alt="base-image" id="base">
+  </div> -->
+
+
+
+</div>
+  <script>
+    // // Script for one disappearing image
+    // const overlays = document.querySelectorAll('.overlay');
+
+    // // img.addEventListener('click', () => {
+    //   // img.classList.add('hidden');
+
+    // // });
+
+    // overlays.forEach(img => {
+
+    //   img.addEventListener('click', function (e) {
+    //     console.log(e.target); 
+
+    //     // e.target.style.border = "20px solid blue"
+
+    //     // e.target.classList.add ("hidden");
+    //     e.target.style.display = "none";
+    //   });
+    // });
+
+const imageContainer = document.querySelector('.image-container');
+    const leftImages = document.querySelectorAll('.overlay.left');
+    const rightImages = document.querySelectorAll('.overlay.right');
+
+    let leftIndex = 0;
+    let rightIndex = 0;
+
+    function hideAll() {
+      document.querySelectorAll('.overlay').forEach(img => img.classList.add('hidden'));
+      
+    }
+    // function addHidden() {  
+    //   document.querySelectorAll('.facetime').forFacetime(img => img.classList.add('facetime-animation'));
+    // }
+
+    imageContainer.addEventListener('click', (event) => {
+      const rect = imageContainer.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+
+      hideAll();
+
+      if (event.clientX < centerX) {
+        // Left click region
+        leftImages[leftIndex].classList.remove('hidden');
+        leftIndex = (leftIndex + 1) % leftImages.length;
+      } else {
+        // Right click region
+        rightImages[rightIndex].classList.remove('hidden');
+        rightIndex = (rightIndex + 1) % rightImages.length;
+      }
+    });
+
+      // addHidden();
+
+
+
+// Script for skew tilt
+
+// var imageContainer = document.querySelector('.image-container');
+
+imageContainer.addEventListener('mousemove', (event) => {
+  const centerX =window.innerWidth  /2;
+
+  if (event.clientX > centerX) {
+    imageContainer.style.transform = "perspective(250px) rotateY(-4deg)";
+
+   } else {
+    imageContainer.style.transform = "perspective(250px) rotateY(4deg)";
+  }
+});
+
+imageContainer.addEventListener('mouseleave', () => {
+  imageContainer.style.transform = "perspective(250px) rotateY(0deg)";
+});
+
+const video = document.getElementById('video');
+video.playbackRate = 0.5;
+
+async function startCamera() {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
+    } catch (err) {
+        console.error("Error accessing the camera", err);
+    }
+}
+startCamera();
+
+video.style.cssText = "-moz-transform: scale(-1, 1); \
+-webkit-transform: scale(-1, 1); -o-transform: scale(-1, 1); \
+transform: scale(-1, 1); filter: FlipH;";
+
+  </script>
+  <!-- what you can't see. focus on what is banal. <br> -->
+  <br>
+  <!-- streetview, not limited to the ground? -->
+   <!-- <br> make it surprize you. What if you could get into a computer. Or bump into someone on the street and get into his point of view. live camera? facetime camera? -->
+</body>
+
+</html>
